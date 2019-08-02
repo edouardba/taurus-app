@@ -1,0 +1,27 @@
+<mat-sidenav-container id="sidenavContainer" fullscreen>
+    <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
+        opened>
+        <div class="items">
+            <div class="toolbarMenu-container">
+                <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
+            </div>
+            <mat-list id="menus">
+                <mat-list-item>
+                    <a routerLink="/issue-token" class="menu-item" mat-flat-button>
+                        <mat-icon>add_circle</mat-icon>
+                        Issue Token
+                    </a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a routerLink="/token-list" class="menu-item" mat-flat-button>
+                        <mat-icon>format_list_bulleted</mat-icon>
+                        Token List
+                    </a>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="content" [ngStyle]="{ 'margin-left.px': contentMargin }">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

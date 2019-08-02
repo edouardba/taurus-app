@@ -1,0 +1,83 @@
+/********************* GENERAL ******************************/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/****************** CONTENT BACKGROUND-COLOR ***************/
+
+.content {
+    background-color: #F7F7F7;
+}
+
+/********************* SIDENAV ******************************/
+
+#sidenav {
+    width: 240px;
+    background-color: #1c254c;
+}
+
+#menus {
+    padding-top: 0;
+    margin-top: 15px;
+}
+
+#sidenav.menu-close {
+    width: 69px;
+}
+
+#sidenav.menu-open {
+    width: 240px;
+}
+
+:host /deep/ .mat-list-item-content {
+    padding: 0!important;
+}
+
+#sidenav .menu-item {
+    width: 100%;
+    border-radius: 0;
+    text-align: left;
+    padding: 7px;
+    padding-left: 22px;
+    background-color: #1c254c;
+    color: white;
+    height: 100%;
+}
+
+.menu-item mat-icon {
+    color: white;
+}
+
+#sidenav .menu-item:hover {
+    color: #FC6D22;
+}
+
+#sidenav .menu-item:hover mat-icon{
+    color: #FC6D22;
+}
+
+#sidenav .menu-item mat-icon {
+    margin-top: -4px;
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+.toolbarMenu-container {
+    background-color: #FC6D22;
+    height: 54px;
+}
+
+#toolbarMenu {
+    cursor: pointer;
+    margin: 6px;
+    margin-left: 21px;
+    margin-top: 16px;
+    color: white;
+}
+
+.mat-drawer-side {
+    border: none;
+}

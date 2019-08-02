@@ -1,0 +1,77 @@
+<div class="container">
+    <mat-grid-list class="grid" cols="6" rowHeight="2:1">
+        <mat-grid-tile class="grid-title" [colspan]="6" [rowspan]="1">
+            <h1 class="title">Token List</h1>
+        </mat-grid-tile>
+        <mat-grid-tile class="grid-filter" [colspan]="4" [rowspan]="1">
+            <mat-form-field class="filter">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Contract name or address">
+            </mat-form-field>
+        </mat-grid-tile>
+        <span class="toolbar-spacer"></span>
+
+        <mat-grid-tile class="grid-button" [colspan]="2" [rowspan]="1">
+            <button routerLink="/issue-token" class="new-dataset-button issue-token-button" mat-flat-button>Issue
+                Token</button>
+            <button routerLink="/" class="new-dataset-button" mat-flat-button>Export to CSV</button>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="6" [rowspan]="2">
+            <div class="grid-data">
+                <table mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="tokenName">
+                        <th mat-header-cell *matHeaderCellDef>Token name</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.tokenName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tokenTicker">
+                        <th mat-header-cell *matHeaderCellDef>Token ticker</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.tokenTicker}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="totalSupply">
+                        <th mat-header-cell *matHeaderCellDef>Total supply</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.totalSupply}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="creation_date">
+                        <th mat-header-cell *matHeaderCellDef>Creation date</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.date}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="issuerName">
+                        <th mat-header-cell *matHeaderCellDef>Issuer Name</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.issuerName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="country">
+                        <th mat-header-cell *matHeaderCellDef>Country</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.countries}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="template">
+                        <th mat-header-cell *matHeaderCellDef>Template</th>
+                        <td mat-cell *matCellDef="let tokenData"> {{tokenData.template}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="actionRemove">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let tokenData"><button class="button-remove" (click)="removeToken(tokenData)"><i
+                                    class="material-icons">
+                                    delete_forever
+                                </i></button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+                </table>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="grid-paginator" [colspan]="6" [rowspan]="1">
+            <mat-paginator [pageSizeOptions]="[2]"></mat-paginator>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

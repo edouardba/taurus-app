@@ -1,0 +1,62 @@
+/********************* GENERAL ********************/
+table {
+    width: 100%;
+}
+
+.grid-data {
+    width: 100%;
+}
+
+.container {
+    margin: 20px 20px 20px 20px;
+}
+
+/********************* TITLE ********************/
+
+.grid-title > ::ng-deep figure {
+    justify-content: flex-start !important;
+}
+
+.title {
+    color: #1c254c;
+}
+
+/********************* FILTER ********************/
+
+.grid-filter > ::ng-deep figure {
+    justify-content: flex-start !important;
+}
+
+.filter {
+    width: 100%;
+}
+
+/********************* BUTTON ********************/
+
+.grid-button > ::ng-deep figure {
+    justify-content: flex-end !important;
+}
+
+.issue-token-button {
+    margin-right: 20px;
+}
+
+.new-dataset-button {
+    color: white;
+    background-color: #1c254c;
+}
+
+.button-remove {
+    all: unset;
+    cursor: pointer;
+}
+
+/********************* PAGINATOR ********************/
+
+.grid-paginator > ::ng-deep figure {
+    justify-content: flex-end !important;
+}
+
+.mat-paginator {
+    background-color: transparent;
+}

@@ -1,0 +1,54 @@
+/************* GENERAL **************/
+.container {
+	background: #fff;
+	padding: 2em 4em 2em;
+	max-width: 400px;
+	margin: 100px auto 0;
+	border-radius: 3px;    
+    box-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+}
+  
+.container > * {
+    width: 100%;
+}
+
+/************** TITLE ****************/
+
+.title {
+	text-align: center;
+}
+
+/************** INPUTS ***************/
+
+.form-control,
+.input {
+    display: block;
+	box-sizing: border-box;
+	width: 100%;
+    outline: none;
+    background: #f5f5f5;
+	border: 1px solid #e5e5e5;
+	font-size: 1em;
+	padding: .7em .5em;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.countries,
+.template {
+    font-size: 1.6em;
+}
+
+.validate {
+    background: #1c254c;
+    width: 100%;
+	border-radius: 3px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 1em;
+	margin: 2em 0 0;
+	outline: none;
+	padding: .8em 0;
+}

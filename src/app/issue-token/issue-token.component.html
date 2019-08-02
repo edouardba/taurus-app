@@ -1,0 +1,63 @@
+<div class="container">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+        <h1 class="title">Create Token</h1>
+        <div class="form-group">
+            <input placeholder="Token Name" type="text" class="form-control" name="tokenName"
+                [(ngModel)]="token.tokenName" #tokenName="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && tokenName.invalid }" required />
+            <div *ngIf="f.submitted && tokenName.invalid" class="invalid-feedback">
+                <div *ngIf="tokenName.errors.required">Token Name is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input placeholder="Token Ticker" type="text" class="form-control" name="tokenTicker"
+                [(ngModel)]="token.tokenTicker" #tokenTicker="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && tokenTicker.invalid }" required />
+            <div *ngIf="f.submitted && tokenTicker.invalid" class="invalid-feedback">
+                <div *ngIf="tokenTicker.errors.required">Token Ticker is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input placeholder="Total Supply" type="number" min="1" class="form-control" name="totalSupply"
+                [(ngModel)]="token.totalSupply" #totalSupply="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && totalSupply.invalid }" required />
+            <div *ngIf="f.submitted && totalSupply.invalid" class="invalid-feedback">
+                <div *ngIf="totalSupply.errors.required">Total Supply is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input placeholder="Issuer Name" type="text" class="form-control" name="issuerName"
+                [(ngModel)]="token.issuerName" #issuerName="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && issuerName.invalid }" required />
+
+            <div *ngIf="f.submitted && issuerName.invalid" class="invalid-feedback">
+                <div *ngIf="issuerName.errors.required">Issuer Name is required</div>
+            </div>
+        </div>
+
+        <select name="template" class="form-control" [(ngModel)]="token.template" #template="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && template.invalid }" required>
+            <option value="ERC20">ERC20</option>
+        </select>
+        <div *ngIf="f.submitted && template.invalid" class="invalid-feedback">
+            <div *ngIf="template.errors.required">Template is required</div>
+        </div>
+
+        <select name="countries" class="form-control" [(ngModel)]="token.countries" #countries="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && countries.invalid }" required>
+            <option *ngFor="let countries of countriesList">
+                {{countries.name}}
+            </option>
+        </select>
+        <div *ngIf="f.submitted && countries.invalid" class="invalid-feedback">
+            <div *ngIf="countries.errors.required">Country is required</div>
+        </div>
+
+        <div class="form-group">
+            <button class="validate">Validate</button>
+        </div>
+    </form>
+</div>
